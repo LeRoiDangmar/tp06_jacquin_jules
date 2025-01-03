@@ -6,8 +6,12 @@
 /FRONTEND/out-tsc
 /FRONTEND/bazel-out
 
+#.ENV
+/BACKEND/.env
+
 # Node
 /FRONTEND/node_modules
+/BACKEND/node_modules
 npm-debug.log
 yarn-error.log
 

@@ -11,10 +11,12 @@ import { environment } from '../../../environments/environments';
 })
 export class FetcherService {
 
+  private baseUrl: string = `http://localhost:3000/api/products/`;
+
   constructor(private http: HttpClient) { }
 
   public fetchFeaturedArticles(): Observable<ArticlePreview[]> {
-    return this.http.get<any[]>(environment.backendClientProduits).pipe(
+    return this.http.get<ArticleFull[]>(this.baseUrl + "getProducts").pipe(
       map(items => items.filter(item => item.en_avant === true)),
       map(items => items.map(item => ({
         id: String(item.id),
@@ -30,7 +32,7 @@ export class FetcherService {
   
   // Cette fonction renvoie toutes les infos d'un article
   public fetchArticleFull(id: string): Observable<ArticleFull> {
-    return this.http.get<ArticleFull[]>(environment.backendClientProduits).pipe(
+    return this.http.get<ArticleFull[]>(this.baseUrl + "getProducts").pipe(
       map(items => {
         const item = items.find(item => item.id == id);
         if (item) {
@@ -44,7 +46,7 @@ export class FetcherService {
 
   // renvoie les articles pour une categorie donnée
   public fetchArticleByCategorie(cat: string): Observable<ArticlePreview[]> {
-    return this.http.get<ArticlePreview[]>(environment.backendClientProduits).pipe(
+    return this.http.get<ArticlePreview[]>(this.baseUrl + "getProducts").pipe(
       map(items => items.filter(item => item.id_categorie == cat)),
       map(items => items.map(item => ({
         id: String(item.id),
@@ -60,13 +62,13 @@ export class FetcherService {
 
   // renvoie les catégories
   public fetchCategories(): Observable<Categorie[]> {
-    return this.http.get<Categorie[]>(environment.backendClientCategories).pipe(
+    return this.http.get<Categorie[]>(this.baseUrl + "getCategories").pipe(
       map(items => items.filter(item => items))
     )
   }
 
   public fetchOneCategorie(id: string): Observable<Categorie> {
-    return this.http.get<Categorie[]>(environment.backendClientCategories).pipe(
+    return this.http.get<Categorie[]>(this.baseUrl + "getCategories").pipe(
       map(items => {
         const item = items.find(item => item.id === id);
         if (item) {
@@ -80,7 +82,7 @@ export class FetcherService {
 
 
   public fetchArticleByQuery(query: string): Observable<ArticlePreview[]> {
-    return this.http.get<ArticlePreview[]>(environment.backendClientProduits).pipe(
+    return this.http.get<ArticlePreview[]>(this.baseUrl + "getProducts").pipe(
       map(items => items.filter(item => item.nom.toLowerCase().includes(query.toLowerCase()))),
       map(items => items.map(item => ({
         id: String(item.id),
