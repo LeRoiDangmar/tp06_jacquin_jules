@@ -52,6 +52,7 @@ async function addUser(filePath, newUser) {
 
         // Generate a unique ID
         const newId = users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 1;
+        console.log( "L'id généré est ", newId, " ", users.length);
         const userToAdd = { id: newId, name: newUser.name, password: newUser.password };
 
         // Append the new user to the users array

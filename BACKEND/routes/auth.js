@@ -103,7 +103,7 @@ router.post('/signup', async (req, res) => {
    */
   router.get('/protected', verifyToken, (req, res) => {
     // If we got here, it means the token was valid.
-    res.status(200).json({ message: `Hello, ${req.user.username}! You have accessed a protected route.` });
+    res.status(200).json({ message: `Hello, ${req.user.name}! You have accessed a protected route.` });
   });
   
   /**
