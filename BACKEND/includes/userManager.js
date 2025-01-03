@@ -70,4 +70,8 @@ async function addUser(filePath, newUser) {
     }
 }
 
+async function updateUser(id){
+    
+}
+
 module.exports = { updateUsers, getUsers, addUser };

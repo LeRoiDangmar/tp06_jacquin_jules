@@ -17,6 +17,9 @@ export const routes: Routes = [
       {
         path: 'cart',
         loadChildren: () => import('./features/cart/cart.module').then(m => m.CartModule)
+      },{
+        path: 'login',
+        loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
       }
     ]
   },

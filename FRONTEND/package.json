@@ -1,5 +1,5 @@
 {
-  "name": "tp04-jacquin-jules",
+  "name": "tp06-jacquin-jules",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:tp04_jacquin_jules": "node dist/tp04_jacquin_jules/server/server.mjs"
+    "serve:ssr:tp06_jacquin_jules": "node dist/tp06_jacquin_jules/server/server.mjs"
   },
   "private": true,
   "dependencies": {

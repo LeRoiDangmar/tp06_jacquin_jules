@@ -41,6 +41,7 @@ function watchUsersFile(filePath) {
     console.log('Watching for changes in users.json...');
 }
 
+
 router.post('/signup', async (req, res) => {
     try {
       const { username, password } = req.body;

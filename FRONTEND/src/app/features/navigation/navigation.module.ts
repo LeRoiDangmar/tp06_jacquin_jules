@@ -7,6 +7,8 @@ import { CategoriesComponent } from './menu/categories/categories.component';
 import { CardsComponent } from './menu/cards/cards.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './menu/cart/cart.component';
+import { AuthModule } from '../auth/auth.module';
+import { AuthComponent } from './menu/auth/auth.component';
 
 const routes: Routes = [
   { path: '', component: MenuComponent }
@@ -18,13 +20,15 @@ const routes: Routes = [
     SearchbarComponent,
     CategoriesComponent,
     CardsComponent,
-    CartComponent
+    CartComponent,
+    AuthComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     RouterOutlet,
-    FormsModule
+    FormsModule,
+    AuthModule
   ],
   exports: [
     MenuComponent,
@@ -33,7 +37,8 @@ const routes: Routes = [
     CategoriesComponent,
     CardsComponent,
     RouterOutlet,
-    FormsModule
+    FormsModule,
+    AuthModule
   ]
 })
 export class NavigationModule { }

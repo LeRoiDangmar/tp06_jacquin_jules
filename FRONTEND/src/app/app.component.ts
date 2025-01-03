@@ -13,5 +13,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'tp04_jacquin_jules';
+  title = 'tp06_jacquin_jules';
 }
